@@ -1,1 +1,0 @@
-2026-05-04 12:08:41.257 [error] Failed to set sticky bit on /tmp/student-code-zsh: Error: ENOENT: no such file or directory, chmod '/tmp/student-code-zsh'
