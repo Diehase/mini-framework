@@ -1,0 +1,75 @@
+{
+  "Version": "20.04",
+  "OEM": {
+    "Vendor": "LENOVO",
+    "Product": "12EJS0J700",
+    "Family": "ThinkCentre M90q Gen 4"
+  },
+  "BIOS": {
+    "Vendor": "LENOVO",
+    "Version": "M4WKT28A"
+  },
+  "CPU": {
+    "OpMode": "32-bit, 64-bit",
+    "CPUs": "16",
+    "Threads": "1",
+    "Cores": "10",
+    "Sockets": "1",
+    "Vendor": "GenuineIntel",
+    "Family": "6",
+    "Model": "191",
+    "Stepping": "2",
+    "Name": "13th Gen Intel(R) Core(TM) i5-13400",
+    "Virtualization": "VT-x"
+  },
+  "Arch": "amd64",
+  "GPU": [
+    {
+      "Vendor": "8086",
+      "Model": "4682"
+    }
+  ],
+  "RAM": 32.5,
+  "Partitions": [
+    982.9,
+    0.5
+  ],
+  "Screens": [
+    {
+      "Size": "797mmx334mm",
+      "Resolution": "3440x1440",
+      "Frequency": "59.97"
+    }
+  ],
+  "Autologin": false,
+  "LivePatch": false,
+  "Session": {
+    "DE": "ubuntu:GNOME",
+    "Name": "ubuntu",
+    "Type": "x11"
+  },
+  "Language": "ru_RU",
+  "Timezone": "Asia/Aqtau",
+  "Install": {
+    "Media": "Ubuntu 20.04.6 LTS \"Focal Fossa\" - Release amd64 (20230316)",
+    "Type": "GTK",
+    "OEM": false,
+    "PartitionMethod": "use_device",
+    "DownloadUpdates": true,
+    "Language": "ru",
+    "Minimal": false,
+    "RestrictedAddons": true,
+    "Stages": {
+      "0": "language",
+      "5": "console_setup",
+      "8": "wireless",
+      "34": "prepare",
+      "97": "partman",
+      "177": "start_install",
+      "224": "timezone",
+      "524": "usersetup",
+      "543": "user_done",
+      "797": "done"
+    }
+  }
+}

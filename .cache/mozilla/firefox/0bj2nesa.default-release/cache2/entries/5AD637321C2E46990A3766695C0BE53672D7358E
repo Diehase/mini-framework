@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="arc-green-light">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tags - mini-framework - Gitea</title>
+	<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiR2l0ZWEiLCJzaG9ydF9uYW1lIjoiR2l0ZWEiLCJzdGFydF91cmwiOiJodHRwczovLzAxeWVzc2Vub3YueXUuZWR1Lmt6L2dpdC8iLCJpY29ucyI6W3sic3JjIjoiaHR0cHM6Ly8wMXllc3Nlbm92Lnl1LmVkdS5rei9naXQvYXNzZXRzL2ltZy9sb2dvLnBuZyIsInR5cGUiOiJpbWFnZS9wbmciLCJzaXplcyI6IjUxMng1MTIifSx7InNyYyI6Imh0dHBzOi8vMDF5ZXNzZW5vdi55dS5lZHUua3ovZ2l0L2Fzc2V0cy9pbWcvbG9nby5zdmciLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCIsInNpemVzIjoiNTEyeDUxMiJ9XX0=">
+	<meta name="author" content="nbayeken">
+	<meta name="description" content="mini-framework">
+	<meta name="keywords" content="go,git,self-hosted,gitea">
+	<meta name="referrer" content="no-referrer">
+
+
+	<link rel="alternate" type="application/atom+xml" title="" href="/git/nbayeken/mini-framework.atom">
+	<link rel="alternate" type="application/rss+xml" title="" href="/git/nbayeken/mini-framework.rss">
+
+	<link rel="icon" href="/git/assets/img/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/git/assets/img/favicon.png" type="image/png">
+	
+	
+		<meta property="og:title" content="mini-framework">
+		<meta property="og:url" content="http://01yessenov.yu.edu.kz/git/nbayeken/mini-framework">
+		
+	
+	<meta property="og:type" content="object">
+	
+		<meta property="og:image" content="http://01yessenov.yu.edu.kz/git/avatars/59eb14a19055b3adeed38f71c071d296aaf01620b56e4625e86ae6b84783cfd9">
+	
+
+<meta property="og:site_name" content="Gitea">
+
+	<link rel="stylesheet" href="/git/assets/css/index.css?v=1.25.5">
+<link rel="stylesheet" href="/git/assets/css/theme-arc-green-light.css?v=1.25.5">
+
+	
+<script>
+	
+	window.addEventListener('error', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.addEventListener('unhandledrejection', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.config = {
+		appUrl: 'https:\/\/01yessenov.yu.edu.kz\/git\/',
+		appSubUrl: '\/git',
+		assetVersionEncoded: encodeURIComponent('1.25.5'), 
+		assetUrlPrefix: '\/git\/assets',
+		runModeIsProd:  true ,
+		customEmojis: {"codeberg":":codeberg:","git":":git:","gitea":":gitea:","github":":github:","gitlab":":gitlab:","gogs":":gogs:"},
+		csrfToken: '-xh3OtM2ssqTkw1z-bxZdza3wlQ6MTc3Nzg3ODQxNTA5MDg3NDc5Ng',
+		pageData: {},
+		notificationSettings: {"EventSourceUpdateTime":10000,"MaxTimeout":60000,"MinTimeout":10000,"TimeoutStep":10000}, 
+		enableTimeTracking:  true ,
+		
+		mermaidMaxSourceCharacters:  50000 ,
+		
+		i18n: {
+			copy_success: "Copied!",
+			copy_error: "Copy failed",
+			error_occurred: "An error occurred",
+			remove_label_str: "Remove item \"%s\"",
+			modal_confirm: "Confirm",
+			modal_cancel: "Cancel",
+			more_items: "More items",
+		},
+	};
+	
+	window.config.pageData = window.config.pageData || {};
+</script>
+<script src="/git/assets/js/index.js?v=1.25.5" onerror="alert('Failed to load asset files from ' + this.src + '. Please make sure the asset files can be accessed.')"></script>
+
+	
+</head>
+<body hx-headers='{"x-csrf-token": "-xh3OtM2ssqTkw1z-bxZdza3wlQ6MTc3Nzg3ODQxNTA5MDg3NDc5Ng"}' hx-swap="outerHTML" hx-ext="morph" hx-push-url="false">
+	
+  
+    <link rel="stylesheet" href="https://theme-park.dev/css/base/gitea/arc-green-light.css">
+  
+
+
+
+	<div class="full height">
+		<noscript>This website requires JavaScript.</noscript>
+
+		
+
+		
+			<nav id="navbar" aria-label="Navigation Bar">
+	<div class="navbar-left">
+		
+		<a class="item" id="navbar-logo" href="/git/" aria-label="Dashboard">
+			<img width="30" height="30" src="/git/assets/img/logo.svg" alt="Logo" aria-hidden="true">
+		</a>
+
+		
+		<div class="ui secondary menu navbar-mobile-right only-mobile">
+			
+	<a class="item " href="/git/notifications" data-tooltip-content="Notifications">
+		<div class="tw-relative">
+			<svg viewBox="0 0 16 16" class="svg octicon-bell" aria-hidden="true" width="16" height="16"><path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16M3 5a5 5 0 0 1 10 0v2.947q0 .076.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.26.26 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556-.003.01.001.006q0 .003.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007-.003-.01-1.703-2.554a1.75 1.75 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5"/></svg>
+			<span class="notification_count tw-hidden">0</span>
+		</div>
+	</a>
+	
+
+
+			<button class="item ui icon mini button tw-m-0" id="navbar-expand-toggle" aria-label="Navigation Menu"><svg viewBox="0 0 16 16" class="svg octicon-three-bars" aria-hidden="true" width="16" height="16"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75m0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75M1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5"/></svg></button>
+		</div>
+
+		
+		
+			
+				<a class="item" href="/git/issues">Issues</a>
+			
+			
+				<a class="item" href="/git/pulls">Pull Requests</a>
+			
+			
+				
+					<a class="item" href="/git/milestones">Milestones</a>
+				
+			
+			<a class="item" href="/git/explore/repos">Explore</a>
+		
+
+		<a id="link-intra" class="item brand" href="https://01yessenov.yu.edu.kz">Intra</a>
+
+
+		
+	</div>
+
+	
+	<div class="navbar-right">
+		
+			
+	<a class="item not-mobile" href="/git/notifications" data-tooltip-content="Notifications">
+		<div class="tw-relative">
+			<svg viewBox="0 0 16 16" class="svg octicon-bell" aria-hidden="true" width="16" height="16"><path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16M3 5a5 5 0 0 1 10 0v2.947q0 .076.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.26.26 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556-.003.01.001.006q0 .003.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007-.003-.01-1.703-2.554a1.75 1.75 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5"/></svg>
+			<span class="notification_count tw-hidden">0</span>
+		</div>
+	</a>
+	
+
+
+			<div class="ui dropdown jump item" data-tooltip-content="Createâ€¦">
+				<span class="text">
+					<svg viewBox="0 0 16 16" class="svg octicon-plus" aria-hidden="true" width="16" height="16"><path d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2"/></svg>
+					<span class="not-mobile"><svg viewBox="0 0 16 16" class="svg octicon-triangle-down" aria-hidden="true" width="16" height="16"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427"/></svg></span>
+					<span class="only-mobile">Createâ€¦</span>
+				</span>
+				<div class="menu">
+					<a class="item" href="/git/repo/create">
+						<svg viewBox="0 0 16 16" class="svg octicon-plus" aria-hidden="true" width="16" height="16"><path d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2"/></svg> New Repository
+					</a>
+					
+						<a class="item" href="/git/repo/migrate">
+							<svg viewBox="0 0 16 16" class="svg octicon-repo-push" aria-hidden="true" width="16" height="16"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0V1.5h-8a1 1 0 0 0-1 1v6.708A2.5 2.5 0 0 1 4.5 9h2.25a.75.75 0 0 1 0 1.5H4.5a1 1 0 0 0 0 2h4.75a.75.75 0 0 1 0 1.5H4.5A2.5 2.5 0 0 1 2 11.5Zm12.23 7.79zl-1.224-1.224v6.184a.75.75 0 0 1-1.5 0V9.066L10.28 10.29a.75.75 0 0 1-1.06-1.061l2.505-2.504a.75.75 0 0 1 1.06 0L15.29 9.23a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018"/></svg> New Migration
+						</a>
+					
+					
+				</div>
+			</div>
+
+			<div class="ui dropdown jump item" data-tooltip-content="Profile and Settingsâ€¦">
+				<span class="text">
+					<img loading="lazy" alt class="ui avatar tw-align-middle tw-mr-1" src="/git/avatars/59eb14a19055b3adeed38f71c071d296aaf01620b56e4625e86ae6b84783cfd9?size=48" title="Nurbek Bayekenov" width="24" height="24"/>
+					<span class="only-mobile">nbayeken</span>
+					<span class="not-mobile"><svg viewBox="0 0 16 16" class="svg octicon-triangle-down" aria-hidden="true" width="16" height="16"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427"/></svg></span>
+				</span>
+				<div class="menu user-menu">
+					<div class="header">
+						Signed in as <strong>nbayeken</strong>
+					</div>
+
+					<div class="divider"></div>
+					<a class="item" href="/git/nbayeken">
+						<svg viewBox="0 0 16 16" class="svg octicon-person" aria-hidden="true" width="16" height="16"><path d="M10.561 8.073a6 6 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6 6 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0M10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0"/></svg>
+						Profile
+					</a>
+					
+						<a class="item" href="/git/nbayeken?tab=stars">
+							<svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25m0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41z"/></svg>
+							Starred
+						</a>
+					
+					<a class="item" href="/git/notifications/subscriptions">
+						<svg viewBox="0 0 16 16" class="svg octicon-bell" aria-hidden="true" width="16" height="16"><path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16M3 5a5 5 0 0 1 10 0v2.947q0 .076.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.26.26 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556-.003.01.001.006q0 .003.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007-.003-.01-1.703-2.554a1.75 1.75 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5"/></svg>
+						Subscriptions
+					</a>
+					<a class="item" href="/git/user/settings">
+						<svg viewBox="0 0 16 16" class="svg octicon-tools" aria-hidden="true" width="16" height="16"><path d="M5.433 2.304A4.49 4.49 0 0 0 3.5 6c0 1.598.832 3.002 2.09 3.802.518.328.929.923.902 1.64v.008l-.164 3.337a.75.75 0 1 1-1.498-.073l.163-3.33c.002-.085-.05-.216-.207-.316A6 6 0 0 1 2 6a6 6 0 0 1 2.567-4.92 1.48 1.48 0 0 1 1.673-.04c.462.296.76.827.76 1.423v2.82c0 .082.041.16.11.206l.75.51a.25.25 0 0 0 .28 0l.75-.51A.25.25 0 0 0 9 5.282V2.463c0-.596.298-1.127.76-1.423a1.48 1.48 0 0 1 1.673.04A6 6 0 0 1 14 6a6 6 0 0 1-2.786 5.068c-.157.1-.209.23-.207.315l.163 3.33a.752.752 0 0 1-1.094.714.75.75 0 0 1-.404-.64l-.164-3.345c-.027-.717.384-1.312.902-1.64A4.5 4.5 0 0 0 12.5 6a4.49 4.49 0 0 0-1.933-3.696c-.024.017-.067.067-.067.16v2.818a1.75 1.75 0 0 1-.767 1.448l-.75.51a1.75 1.75 0 0 1-1.966 0l-.75-.51A1.75 1.75 0 0 1 5.5 5.282V2.463c0-.092-.043-.142-.067-.159"/></svg>
+						Settings
+					</a>
+					<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.gitea.com">
+						<svg viewBox="0 0 16 16" class="svg octicon-question" aria-hidden="true" width="16" height="16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.76 2.76 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6 6 0 0 0-.26.16 1 1 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1 1 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.61.61 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1 1 0 0 0-.34.398M9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>
+						Help
+					</a>
+					
+					<div class="divider"></div>
+					<a class="item link-action" href data-url="/git/user/logout">
+						<svg viewBox="0 0 16 16" class="svg octicon-sign-out" aria-hidden="true" width="16" height="16"><path d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm10.44 4.5-1.97-1.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.97-1.97H6.75a.75.75 0 0 1 0-1.5Z"/></svg>
+						Sign Out
+					</a>
+				</div>
+			</div>
+		
+	</div>
+
+	
+	
+</nav>
+
+		
+
+
+
+<div role="main" aria-label="Tags" class="page-content repository tags">
+	<div class="secondary-nav">
+
+	<div class="ui container">
+		<div class="repo-header">
+			<div class="flex-item tw-items-center">
+				<div class="flex-item-leading">
+					
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="24" height="24"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.5 2.5 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.5 2.5 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.25.25 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>
+
+
+				</div>
+				<div class="flex-item-main">
+					<div class="flex-item-title tw-text-18">
+						<a class="muted tw-font-normal" href="/git/nbayeken">nbayeken</a>/<a class="muted" href="/git/nbayeken/mini-framework">mini-framework</a>
+					</div>
+				</div>
+				<div class="flex-item-trailing">
+					
+					
+						<span class="ui basic label not-mobile">Private</span>
+						<div class="repo-icon only-mobile" data-tooltip-content="Private"><svg viewBox="0 0 16 16" class="svg octicon-lock" aria-hidden="true" width="18" height="18"><path d="M4 4a4 4 0 0 1 8 0v2h.25c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-5.5C2 6.784 2.784 6 3.75 6H4Zm8.25 3.5h-8.5a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25M10.5 6V4a2.5 2.5 0 1 0-5 0v2Z"/></svg></div>
+					
+					
+					
+					
+				</div>
+			</div>
+			
+				<div class="flex-text-block tw-flex-wrap">
+					
+					
+					
+					<a class="ui compact small basic button" href="/git/nbayeken/mini-framework.rss" data-tooltip-content="RSS Feed">
+						<svg viewBox="0 0 16 16" class="svg octicon-rss" aria-hidden="true" width="16" height="16"><path d="M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.5 10.5 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7 7 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.5 5.5 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489M2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/></svg>
+					</a>
+					
+					<form class="flex-text-inline" hx-boost="true" hx-target="this" method="post" action="/git/nbayeken/mini-framework/action/watch">
+	<div class="ui labeled button" >
+		
+		
+		<button type="submit" class="ui compact small basic button" aria-label="Watch">
+			<svg viewBox="0 0 16 16" class="svg octicon-eye" aria-hidden="true" width="16" height="16"><path d="M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14s-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2M1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5s2.825-.742 3.955-1.715c1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5s-2.825.742-3.955 1.715c-1.124.967-1.954 2.096-2.366 2.717M8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10"/></svg>
+			<span class="not-mobile" aria-hidden="true">Watch</span>
+		</button>
+		<a hx-boost="false" class="ui basic label" href="/git/nbayeken/mini-framework/watchers">
+			0
+		</a>
+	</div>
+</form>
+
+					
+					<form class="flex-text-inline" hx-boost="true" hx-target="this" method="post" action="/git/nbayeken/mini-framework/action/star">
+	<div class="ui labeled button" >
+		
+		
+		<button type="submit" class="ui compact small basic button" aria-label="Star">
+			<svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25m0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41z"/></svg>
+			<span class="not-mobile" aria-hidden="true">Star</span>
+		</button>
+		<a hx-boost="false" class="ui basic label" href="/git/nbayeken/mini-framework/stars">
+			0
+		</a>
+	</div>
+</form>
+
+					
+					
+						<div class="ui labeled button
+							
+								disabled
+							"
+							
+								data-tooltip-content="You cannot fork a repository you own."
+							
+						>
+							<a class="ui compact small basic button"
+								
+									
+								
+							>
+								<svg viewBox="0 0 16 16" class="svg octicon-repo-forked" aria-hidden="true" width="16" height="16"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0M5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0m6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5m-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0"/></svg><span class="text not-mobile">Fork</span>
+							</a>
+							<a class="ui basic label" href="/git/nbayeken/mini-framework/forks">
+								0
+							</a>
+						</div>
+						<div class="ui small modal" id="fork-repo-modal">
+							<div class="header">
+								You've already forked mini-framework
+							</div>
+							<div class="content tw-text-left">
+								<div class="ui list">
+									
+								</div>
+								
+							</div>
+						</div>
+					
+				</div>
+			
+		</div>
+		
+		
+		
+	</div>
+
+	<div class="ui container">
+		<overflow-menu class="ui secondary pointing menu">
+			
+				<div class="overflow-menu-items">
+					
+					<a class="item" href="/git/nbayeken/mini-framework">
+						<svg viewBox="0 0 16 16" class="svg octicon-code" aria-hidden="true" width="16" height="16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg> Code
+					</a>
+					
+
+					
+						<a class="item" href="/git/nbayeken/mini-framework/issues">
+							<svg viewBox="0 0 16 16" class="svg octicon-issue-opened" aria-hidden="true" width="16" height="16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0"/></svg> Issues
+							
+						</a>
+					
+
+					
+
+					
+						<a class="item" href="/git/nbayeken/mini-framework/pulls">
+							<svg viewBox="0 0 16 16" class="svg octicon-git-pull-request" aria-hidden="true" width="16" height="16"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25m5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354M3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0"/></svg> Pull Requests
+							
+						</a>
+					
+
+					
+						<a class="item" href="/git/nbayeken/mini-framework/actions">
+							<svg viewBox="0 0 16 16" class="svg octicon-play" aria-hidden="true" width="16" height="16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0m4.879-2.773 4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559V5.442a.25.25 0 0 1 .379-.215"/></svg> Actions
+							
+						</a>
+					
+
+					
+						<a href="/git/nbayeken/mini-framework/packages" class="item">
+							<svg viewBox="0 0 16 16" class="svg octicon-package" aria-hidden="true" width="16" height="16"><path d="m8.878.392 5.25 3.045c.54.314.872.89.872 1.514v6.098a1.75 1.75 0 0 1-.872 1.514l-5.25 3.045a1.75 1.75 0 0 1-1.756 0l-5.25-3.045A1.75 1.75 0 0 1 1 11.049V4.951c0-.624.332-1.201.872-1.514L7.122.392a1.75 1.75 0 0 1 1.756 0M7.875 1.69l-4.63 2.685L8 7.133l4.755-2.758-4.63-2.685a.25.25 0 0 0-.25 0M2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432Zm6.25 8.271 4.625-2.683a.25.25 0 0 0 .125-.216V5.677L8.75 8.432Z"/></svg> Packages
+						</a>
+					
+
+					
+					
+						<a href="/git/nbayeken/mini-framework/projects" class="item">
+							<svg viewBox="0 0 16 16" class="svg octicon-project" aria-hidden="true" width="16" height="16"><path d="M1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0M1.5 1.75v12.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25M11.75 3a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-1.5 0v-7.5a.75.75 0 0 1 .75-.75m-8.25.75a.75.75 0 0 1 1.5 0v5.5a.75.75 0 0 1-1.5 0ZM8 3a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 3"/></svg> Projects
+							
+						</a>
+					
+
+					
+					<a class="active item" href="/git/nbayeken/mini-framework/releases">
+						<svg viewBox="0 0 16 16" class="svg octicon-tag" aria-hidden="true" width="16" height="16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775m1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg> Releases
+						
+					</a>
+					
+
+					
+						<a class="item" href="/git/nbayeken/mini-framework/wiki">
+							<svg viewBox="0 0 16 16" class="svg octicon-book" aria-hidden="true" width="16" height="16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.74 3.74 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574M8.755 4.75l-.004 7.322a3.75 3.75 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25"/></svg> Wiki
+						</a>
+					
+
+					
+
+					
+						<a class="item" href="/git/nbayeken/mini-framework/activity">
+							<svg viewBox="0 0 16 16" class="svg octicon-pulse" aria-hidden="true" width="16" height="16"><path d="M6 2c.306 0 .582.187.696.471L10 10.731l1.304-3.26A.75.75 0 0 1 12 7h3.25a.75.75 0 0 1 0 1.5h-2.742l-1.812 4.528a.751.751 0 0 1-1.392 0L6 4.77 4.696 8.03A.75.75 0 0 1 4 8.5H.75a.75.75 0 0 1 0-1.5h2.742l1.812-4.529A.75.75 0 0 1 6 2"/></svg> Activity
+						</a>
+					
+
+					
+
+					
+						<span class="item-flex-space"></span>
+						<a class=" item" href="/git/nbayeken/mini-framework/settings">
+							<svg viewBox="0 0 16 16" class="svg octicon-tools" aria-hidden="true" width="16" height="16"><path d="M5.433 2.304A4.49 4.49 0 0 0 3.5 6c0 1.598.832 3.002 2.09 3.802.518.328.929.923.902 1.64v.008l-.164 3.337a.75.75 0 1 1-1.498-.073l.163-3.33c.002-.085-.05-.216-.207-.316A6 6 0 0 1 2 6a6 6 0 0 1 2.567-4.92 1.48 1.48 0 0 1 1.673-.04c.462.296.76.827.76 1.423v2.82c0 .082.041.16.11.206l.75.51a.25.25 0 0 0 .28 0l.75-.51A.25.25 0 0 0 9 5.282V2.463c0-.596.298-1.127.76-1.423a1.48 1.48 0 0 1 1.673.04A6 6 0 0 1 14 6a6 6 0 0 1-2.786 5.068c-.157.1-.209.23-.207.315l.163 3.33a.752.752 0 0 1-1.094.714.75.75 0 0 1-.404-.64l-.164-3.345c-.027-.717.384-1.312.902-1.64A4.5 4.5 0 0 0 12.5 6a4.49 4.49 0 0 0-1.933-3.696c-.024.017-.067.067-.067.16v2.818a1.75 1.75 0 0 1-.767 1.448l-.75.51a1.75 1.75 0 0 1-1.966 0l-.75-.51A1.75 1.75 0 0 1 5.5 5.282V2.463c0-.092-.043-.142-.067-.159"/></svg> Settings
+						</a>
+					
+				</div>
+			
+		</overflow-menu>
+	</div>
+	<div class="ui tabs divider"></div>
+</div>
+
+	<div class="ui container">
+		
+		
+
+
+
+	<div class="flex-text-block">
+		<div class="tw-flex-1 tw-flex tw-items-center">
+			<h2 class="ui compact small menu small-menu-items">
+				<a class="item" href="/git/nbayeken/mini-framework/releases">0 Releases</a>
+				
+					<a class="active item" href="/git/nbayeken/mini-framework/tags">0 Tags</a>
+				
+			</h2>
+		</div>
+		
+			<a class="ui small button" href="/git/nbayeken/mini-framework/tags.rss">
+				<svg viewBox="0 0 16 16" class="svg octicon-rss" aria-hidden="true" width="16" height="16"><path d="M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.5 10.5 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7 7 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.5 5.5 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489M2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/></svg> RSS Feed
+			</a>
+		
+		
+	</div>
+	<div class="divider"></div>
+
+
+		<h4 class="ui top attached header">
+			0 Tags
+		</h4>
+		
+		<div class="ui attached segment">
+			<form class="ignore-dirty" method="get">
+				
+<div class="ui small fluid action input">
+	
+
+
+<input type="search" name="q" maxlength="255" spellcheck="false" placeholder="Search tagsâ€¦">
+
+	
+	
+
+<button class="ui small icon button" aria-label="Searchâ€¦" data-tooltip-content="Search for matching tags. Use &#39;%&#39; to match any sequence of numbers."><svg viewBox="0 0 16 16" class="svg octicon-search" aria-hidden="true" width="16" height="16"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7"/></svg></button>
+
+</div>
+
+			</form>
+		</div>
+		<div class="ui attached segment tw-p-0">
+			
+				
+			
+		</div>
+		
+
+
+
+	
+
+
+	</div>
+</div>
+
+
+<div id="confirm-delete-tag-modal" class="ui small modal">
+	<div class="header">
+		Delete Tag
+	</div>
+	<div class="content">
+		<p>Will delete this tag from repository. Repository contents and history remain unchanged. Continue?</p>
+	</div>
+	
+<div class="actions">
+	
+		
+		
+		
+		
+		
+		<button class="ui cancel button"><svg viewBox="0 0 16 16" class="svg octicon-x" aria-hidden="true" width="16" height="16"><path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-3.22 3.22a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06"/></svg> No</button>
+		<button class="ui primary ok button"><svg viewBox="0 0 16 16" class="svg octicon-check" aria-hidden="true" width="16" height="16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0"/></svg> Yes</button>
+	
+</div>
+
+</div>
+
+
+
+
+		
+	</div>
+	
+	<footer class="page-footer" role="group" aria-label="Footer">
+	<div class="left-links" role="contentinfo" aria-label="About Software">
+		
+			<a target="_blank" rel="noopener noreferrer" href="https://about.gitea.com">Powered by Gitea</a>
+		
+		
+			Version:
+			
+				1.25.5
+			
+		
+		
+			Page: <strong>9ms</strong>
+			Template: <strong>1ms</strong>
+		
+	</div>
+	<div class="right-links" role="group" aria-label="Links">
+		<div class="ui dropdown upward">
+			<span class="flex-text-inline"><svg viewBox="0 0 16 16" class="svg octicon-globe" aria-hidden="true" width="14" height="14"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M5.78 8.75a9.64 9.64 0 0 0 1.363 4.177q.383.64.857 1.215c.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a10 10 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.51 6.51 0 0 0 4.666 5.5q-.184-.271-.352-.552c-.715-1.192-1.437-2.874-1.581-4.948m-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948q.18-.295.353-.552a6.51 6.51 0 0 0-4.666 5.5m10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948q-.18.296-.353.552a6.51 6.51 0 0 0 4.666-5.5Zm2.733-1.5a6.51 6.51 0 0 0-4.666-5.5q.184.272.353.552c.714 1.192 1.436 2.874 1.58 4.948Z"/></svg> English</span>
+			<div class="menu language-menu">
+				<a lang="en-US" data-url="/git/?lang=en-US" class="item selected">English</a>
+				</div>
+		</div>
+		<a href="/git/assets/licenses.txt">Licenses</a>
+		<a href="/git/api/swagger">API</a>
+		
+	</div>
+</footer>
+
+	
+</body>
+</html>
+
+¹#ÞÃ      iøE–iøE–Isâ—iøE–   e    O^partitionKey=%28https%2Cyu.edu.kz%29,:https://01yessenov.yu.edu.kz/git/nbayeken/mini-framework/tags necko:classified 1 peer-ip-address 172.16.0.88 peer-port 443 strongly-framed 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAAAAgAAAAAAAAAAAAAAAAAAAAEAOQFmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAOZMIIDlTCCAxqgAwIBAgISBhI9v0XCrMLa0Am/UKvi2i1aMAoGCCqGSM49BAMDMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFNzAeFw0yNjA0MTAwNjQ3MDRaFw0yNjA3MDkwNjQ3MDNaMB8xHTAbBgNVBAMTFDAxeWVzc2Vub3YueXUuZWR1Lmt6MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzHjrS7A0ipzwwFXsGkt19lbgQASJKnR8TXXlTJry/7DhlefiR/FPj5rw/r00YJudayN/eO0PgOdfgA6OoathiKOCAiEwggIdMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTunF9qFqvPKOxHFxGStTrL1cyGyTAfBgNVHSMEGDAWgBSuSJ7chx1EoG/aouVgdAR4wpwAgDAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKGFmh0dHA6Ly9lNy5pLmxlbmNyLm9yZy8wHwYDVR0RBBgwFoIUMDF5ZXNzZW5vdi55dS5lZHUua3owEwYDVR0gBAwwCjAIBgZngQwBAgEwLQYDVR0fBCYwJDAioCCgHoYcaHR0cDovL2U3LmMubGVuY3Iub3JnLzkxLmNybDCCAQ0GCisGAQQB1nkCBAIEgf4EgfsA+QB2ANgJVTuUT3r/yBYZb5RPhauw+Pxeh1UmDxXRLnK7RUsUAAABnXZae34AAAQDAEcwRQIhANXSzBpkeIUI4nprOO7lvNuFF+Rsha1sXRUCt6B83iCzAiBBJRdCgCqoREJbKkbczaQZ9I8eEPcbi7+4yA0d7OH3PQB/AGz+UBlDqF6pFrxS0TPk3Mke8UEcfSWEINFzgJ4YGOs6AAABnXZafa8ACAAABQAGlLfsBAMASDBGAiEAixdjZ2sET1htoyB6/brhInOX0ZTSvyiZm07TETj0TM8CIQCEUx4cgJrGR3a326YNF5T9/Cn+Lf5Yu8kV9yPD3m3KjTAKBggqhkjOPQQDAwNpADBmAjEA3SoGYaQa8TqXcxQLXXQNLL65Un1+RoLC0SHVS44Arcfmourz6u1TYRRpO156BkDtAjEAz5L/woMbjycLVyH7++CBGXxOirQsxRwoC8RzXbTD/bHa5vIFe8BmgmL5SPkb1Y4uEwEABAAAAAAAAQEAAAAAAAAGeDI1NTE5AAAAEUVDRFNBLVAyNTYtU0hBMjU2AANmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAOZMIIDlTCCAxqgAwIBAgISBhI9v0XCrMLa0Am/UKvi2i1aMAoGCCqGSM49BAMDMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFNzAeFw0yNjA0MTAwNjQ3MDRaFw0yNjA3MDkwNjQ3MDNaMB8xHTAbBgNVBAMTFDAxeWVzc2Vub3YueXUuZWR1Lmt6MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzHjrS7A0ipzwwFXsGkt19lbgQASJKnR8TXXlTJry/7DhlefiR/FPj5rw/r00YJudayN/eO0PgOdfgA6OoathiKOCAiEwggIdMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTunF9qFqvPKOxHFxGStTrL1cyGyTAfBgNVHSMEGDAWgBSuSJ7chx1EoG/aouVgdAR4wpwAgDAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKGFmh0dHA6Ly9lNy5pLmxlbmNyLm9yZy8wHwYDVR0RBBgwFoIUMDF5ZXNzZW5vdi55dS5lZHUua3owEwYDVR0gBAwwCjAIBgZngQwBAgEwLQYDVR0fBCYwJDAioCCgHoYcaHR0cDovL2U3LmMubGVuY3Iub3JnLzkxLmNybDCCAQ0GCisGAQQB1nkCBAIEgf4EgfsA+QB2ANgJVTuUT3r/yBYZb5RPhauw+Pxeh1UmDxXRLnK7RUsUAAABnXZae34AAAQDAEcwRQIhANXSzBpkeIUI4nprOO7lvNuFF+Rsha1sXRUCt6B83iCzAiBBJRdCgCqoREJbKkbczaQZ9I8eEPcbi7+4yA0d7OH3PQB/AGz+UBlDqF6pFrxS0TPk3Mke8UEcfSWEINFzgJ4YGOs6AAABnXZafa8ACAAABQAGlLfsBAMASDBGAiEAixdjZ2sET1htoyB6/brhInOX0ZTSvyiZm07TETj0TM8CIQCEUx4cgJrGR3a326YNF5T9/Cn+Lf5Yu8kV9yPD3m3KjTAKBggqhkjOPQQDAwNpADBmAjEA3SoGYaQa8TqXcxQLXXQNLL65Un1+RoLC0SHVS44Arcfmourz6u1TYRRpO156BkDtAjEAz5L/woMbjycLVyH7++CBGXxOirQsxRwoC8RzXbTD/bHa5vIFe8BmgmL5SPkb1Y4uZgoyJpFcT/u7IImFpjLfBb3Dl5pUIkzVhYlpa26W6oMAAAAAAAAEWzCCBFcwggI/oAMCAQICEQCqdfHmK48KIglm04u/1LqhMA0GCSqGSIb3DQEBCwUAME8xCzAJBgNVBAYTAlVTMSkwJwYDVQQKEyBJbnRlcm5ldCBTZWN1cml0eSBSZXNlYXJjaCBHcm91cDEVMBMGA1UEAxMMSVNSRyBSb290IFgxMB4XDTI0MDMxMzAwMDAwMFoXDTI3MDMxMjIzNTk1OVowMjELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUxldCdzIEVuY3J5cHQxCzAJBgNVBAMTAkU3MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEQegEkwhYf743MAzAoEHq/lbahJM+yQDbq2cSz/lPUwnoqC+rKeWfFUb0W2JOD9SDQZm3n0ByRRwsXEoypsLbxgVqZf/a2vB1tEA7FGiVtqjianHidGVRU94W1B4nwTP9o4H4MIH1MA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwEgYDVR0TAQH/BAgwBgEB/wIBADAdBgNVHQ4EFgQUrkie3IcdRKBv2qLlYHQEeMKcAIAwHwYDVR0jBBgwFoAUebRZ5nu25eQBc4AIiMgaWPbpm24wMgYIKwYBBQUHAQEEJjAkMCIGCCsGAQUFBzAChhZodHRwOi8veDEuaS5sZW5jci5vcmcvMBMGA1UdIAQMMAowCAYGZ4EMAQIBMCcGA1UdHwQgMB4wHKAaoBiGFmh0dHA6Ly94MS5jLmxlbmNyLm9yZy8wDQYJKoZIhvcNAQELBQADggIBAI8eunw3S5OcsBZ9wswNcNan8pR1A2hH9EGaV3CbHnXSRkn21FDr2zUfTf0ENeitZV5eFRcoZhlw0+SnX3K9EbyCFazcRYeJah7UUQj+kQUbLam2ds1EYKmpJ/14qdImkC9CHXxwWa9/ehYJJ54kWBXJCjkTxsjN0Cp3euoLTLLfCOZ5EUJQIPyW/hnN3oCL7hilm6BNRvPTU7DfS0ww9zy49HVDKziLqlYywfKRAuspPXp65a6o10IJCxGIV86u3S2n7+VZIoOhpdJ7rqo6n6dENW4taMlTQJV3umlF8PdgnIIQvWzbChDtfjOdmGOfqHyF5Uv0hEG71WGAS2ecnooJVerd0jOh/r0xtGj/WB8y5/ylTh8xkH1wz+6jObZH/u3YmXu6Nn8OjuyLzen7EFxEEI/EyVFycb9v7iYXLsv7Ug4F8BzPFJN+FjW0U+8xkxpEEV9ILG4wHmv42AKFr9Gb0EcKaj3u/Q/4uwnqfKlpwPuwBP9wd0v93RBGJnNJaXtd+ugP+hhIJN5La/TxKEKywobOiLbt8JzSwdnrgvCChi0BaRrTjv9v4YgCo8mo2gT9ucNYxdFpfAW6p3t7mdqtRsjxSWEZk+/zl6Zjh/xVS7cEvvJ4NXAJqQroz8LXiWTXAxtLBdp/7HNPkkH+PX3clCtLcvlVMBY/bZlsckfzZgoyJpFcT/u7IImFpjLfBb3Dl5pUIkzVhYlpa26W6oMAAAAAAAAFbzCCBWswggNToAMCAQICEQCCEM+w0kDjWURj4LtjgosAMA0GCSqGSIb3DQEBCwUAME8xCzAJBgNVBAYTAlVTMSkwJwYDVQQKEyBJbnRlcm5ldCBTZWN1cml0eSBSZXNlYXJjaCBHcm91cDEVMBMGA1UEAxMMSVNSRyBSb290IFgxMB4XDTE1MDYwNDExMDQzOFoXDTM1MDYwNDExMDQzOFowTzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2VhcmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCt6CRz9BQ385ueK1coHIe+3LffOJCMbjzmV6B493XCov71am72AE8o295ohmxEk7axY/0UEmu/H9LqMZshftEzPLpI9d1537O4/xLxIZpLwYqGcWlKZmZsj348cL+tKSIG8+TA5oCu4kuPt5l+lAOf00eXfJlII1PoOK5PCm+DLtFJV4yAdLbaL9A4jXsDcCEbdfIwPPqPrt3aY6vrFk/CjhFLfs8L6P+1dy70sntK4EwSJQxwjQMpoOFTJOwT2e4ZvxCzSow/iaNhUd6shweU9GNx7C7ib1uYgeGJXDR5bHbvO5BieebbpJovJsXQEOEO3tkQjhb7t/eo98flAgeYjzYIlefiN5YNNnWe+w5ysR2bvAP5SQXYgd0FtCrWQemsAXaVCg/Y39W9Eh81LygXbNKYwagJZHduRze6zqxZXmidf3LWicUGQSk+WT7dJvUkyRGnWqNMQB9GoZm1pzpRboY7nn1ypxIFeFntPlF4FQsDj43QLwWyPntKHEtzBRL8xurgUBN8Q5N0s8p0544fAQjQMNRbcTa0B7rBMDBcSLeCO5imfWCKoqMpgsy6vYMEG6KDA0Gh1gXxG8K28Kh8hjtGqEgqiNx2mna/H2qlPRmP6zjzZN7IKw0KKP/32+IVQtQi0Cdd4Xn+GOdwiK1O5tmLOsbdJ1Fu/7xk9TNDTwIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUebRZ5nu25eQBc4AIiMgaWPbpm24wDQYJKoZIhvcNAQELBQADggIBAFUfWKm8sqhQ0Ayx2BppICcpCKxhdVyKbviC5Wkv1fZWS7m4cxBZ0yGXfudMcfuy0mCtOagL6hchVoXxUA5Z687gWem6yRXvhp2PhID25OmRkNwXm2IbRfBmldJ8b8LqO+8fz8vWrifxqbDIrv19fpr6IgTr/9l/6pErIrEXDo/yijRbWNj8AclUubgmzIqIM4lMLYQ8gt/ullcFuiy798S3x047gr4xyCJzc5LRwoCkOTkQMyOCTDyfhrJVmB2+KYaMIpue4ms7VzqCcE3cCceJywoHTWzoXY7J786rx7u1K05F1krQJszlcsoIaqWV4xWh96TtySxfpfv/rCgCLr7Xe7vjcXuQFtMHXkZTfDcHQozTxJac1Zm1KuCVGoBIrkw5B87MR6RSlSu6uPut0jNTfeUdTW3VobHHQm/mQCc1XKMotweN540zkOcjn/tQnHlsRtW0FbOWbn6bDJY6uFItP9Zb4fsIwoT+JKijidqsauEYKrGoQ2Fb0x/cO4128i3ojXXfFzNsPVP7e8tBX//cotBhOOGWuKxdizfXddUzwJkRrp1BwXJ1hL4CQUJfZyRIlNGbJ74HP7m4T4F0UeF6t+2dI+K+4NUoBBM8MQOe3Xpsj8YHGMZ/3keOPyieBAbPpVQ0d73siZvpF0PfW9tf/o4eV6LNQJ1+YiLa3hgnAAJmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAOZMIIDlTCCAxqgAwIBAgISBhI9v0XCrMLa0Am/UKvi2i1aMAoGCCqGSM49BAMDMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFNzAeFw0yNjA0MTAwNjQ3MDRaFw0yNjA3MDkwNjQ3MDNaMB8xHTAbBgNVBAMTFDAxeWVzc2Vub3YueXUuZWR1Lmt6MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzHjrS7A0ipzwwFXsGkt19lbgQASJKnR8TXXlTJry/7DhlefiR/FPj5rw/r00YJudayN/eO0PgOdfgA6OoathiKOCAiEwggIdMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTunF9qFqvPKOxHFxGStTrL1cyGyTAfBgNVHSMEGDAWgBSuSJ7chx1EoG/aouVgdAR4wpwAgDAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKGFmh0dHA6Ly9lNy5pLmxlbmNyLm9yZy8wHwYDVR0RBBgwFoIUMDF5ZXNzZW5vdi55dS5lZHUua3owEwYDVR0gBAwwCjAIBgZngQwBAgEwLQYDVR0fBCYwJDAioCCgHoYcaHR0cDovL2U3LmMubGVuY3Iub3JnLzkxLmNybDCCAQ0GCisGAQQB1nkCBAIEgf4EgfsA+QB2ANgJVTuUT3r/yBYZb5RPhauw+Pxeh1UmDxXRLnK7RUsUAAABnXZae34AAAQDAEcwRQIhANXSzBpkeIUI4nprOO7lvNuFF+Rsha1sXRUCt6B83iCzAiBBJRdCgCqoREJbKkbczaQZ9I8eEPcbi7+4yA0d7OH3PQB/AGz+UBlDqF6pFrxS0TPk3Mke8UEcfSWEINFzgJ4YGOs6AAABnXZafa8ACAAABQAGlLfsBAMASDBGAiEAixdjZ2sET1htoyB6/brhInOX0ZTSvyiZm07TETj0TM8CIQCEUx4cgJrGR3a326YNF5T9/Cn+Lf5Yu8kV9yPD3m3KjTAKBggqhkjOPQQDAwNpADBmAjEA3SoGYaQa8TqXcxQLXXQNLL65Un1+RoLC0SHVS44Arcfmourz6u1TYRRpO156BkDtAjEAz5L/woMbjycLVyH7++CBGXxOirQsxRwoC8RzXbTD/bHa5vIFe8BmgmL5SPkb1Y4uZgoyJpFcT/u7IImFpjLfBb3Dl5pUIkzVhYlpa26W6oMAAAAAAAAEWzCCBFcwggI/oAMCAQICEQCqdfHmK48KIglm04u/1LqhMA0GCSqGSIb3DQEBCwUAME8xCzAJBgNVBAYTAlVTMSkwJwYDVQQKEyBJbnRlcm5ldCBTZWN1cml0eSBSZXNlYXJjaCBHcm91cDEVMBMGA1UEAxMMSVNSRyBSb290IFgxMB4XDTI0MDMxMzAwMDAwMFoXDTI3MDMxMjIzNTk1OVowMjELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUxldCdzIEVuY3J5cHQxCzAJBgNVBAMTAkU3MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEQegEkwhYf743MAzAoEHq/lbahJM+yQDbq2cSz/lPUwnoqC+rKeWfFUb0W2JOD9SDQZm3n0ByRRwsXEoypsLbxgVqZf/a2vB1tEA7FGiVtqjianHidGVRU94W1B4nwTP9o4H4MIH1MA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwEgYDVR0TAQH/BAgwBgEB/wIBADAdBgNVHQ4EFgQUrkie3IcdRKBv2qLlYHQEeMKcAIAwHwYDVR0jBBgwFoAUebRZ5nu25eQBc4AIiMgaWPbpm24wMgYIKwYBBQUHAQEEJjAkMCIGCCsGAQUFBzAChhZodHRwOi8veDEuaS5sZW5jci5vcmcvMBMGA1UdIAQMMAowCAYGZ4EMAQIBMCcGA1UdHwQgMB4wHKAaoBiGFmh0dHA6Ly94MS5jLmxlbmNyLm9yZy8wDQYJKoZIhvcNAQELBQADggIBAI8eunw3S5OcsBZ9wswNcNan8pR1A2hH9EGaV3CbHnXSRkn21FDr2zUfTf0ENeitZV5eFRcoZhlw0+SnX3K9EbyCFazcRYeJah7UUQj+kQUbLam2ds1EYKmpJ/14qdImkC9CHXxwWa9/ehYJJ54kWBXJCjkTxsjN0Cp3euoLTLLfCOZ5EUJQIPyW/hnN3oCL7hilm6BNRvPTU7DfS0ww9zy49HVDKziLqlYywfKRAuspPXp65a6o10IJCxGIV86u3S2n7+VZIoOhpdJ7rqo6n6dENW4taMlTQJV3umlF8PdgnIIQvWzbChDtfjOdmGOfqHyF5Uv0hEG71WGAS2ecnooJVerd0jOh/r0xtGj/WB8y5/ylTh8xkH1wz+6jObZH/u3YmXu6Nn8OjuyLzen7EFxEEI/EyVFycb9v7iYXLsv7Ug4F8BzPFJN+FjW0U+8xkxpEEV9ILG4wHmv42AKFr9Gb0EcKaj3u/Q/4uwnqfKlpwPuwBP9wd0v93RBGJnNJaXtd+ugP+hhIJN5La/TxKEKywobOiLbt8JzSwdnrgvCChi0BaRrTjv9v4YgCo8mo2gT9ucNYxdFpfAW6p3t7mdqtRsjxSWEZk+/zl6Zjh/xVS7cEvvJ4NXAJqQroz8LXiWTXAxtLBdp/7HNPkkH+PX3clCtLcvlVMBY/bZlsckfzAAEAAAACaDIAAQAAAABQdGxzZmxhZ3MweDAwMDAwMDAwOjAxeWVzc2Vub3YueXUuZWR1Lmt6OjQ0M15wYXJ0aXRpb25LZXk9JTI4aHR0cHMlMkN5dS5lZHUua3olMjkAAA== request-method GET response-head HTTP/2 200 
+alt-svc: h3=":443"; ma=2592000
+cache-control: max-age=0, private, must-revalidate, no-transform
+content-type: text/html; charset=utf-8
+date: Mon, 04 May 2026 07:07:02 GMT
+server: Caddy
+strict-transport-security: max-age=31536000;
+via: 1.1 Caddy
+x-frame-options: SAMEORIGIN
+X-Firefox-Spdy: h2
+ original-response-headers alt-svc: h3=":443"; ma=2592000
+cache-control: max-age=0, private, must-revalidate, no-transform
+content-type: text/html; charset=utf-8
+date: Mon, 04 May 2026 07:07:02 GMT
+server: Caddy
+strict-transport-security: max-age=31536000;
+via: 1.1 Caddy
+x-frame-options: SAMEORIGIN
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 30 net-response-time-onstop 44   qw

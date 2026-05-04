@@ -1,0 +1,61 @@
+2026-05-04 12:08:31.079 [info] [main] Log level: Info
+2026-05-04 12:08:31.079 [info] [main] Validating found git in: "git"
+2026-05-04 12:08:31.079 [info] [main] Using git "2.25.1" from "git"
+2026-05-04 12:08:31.079 [info] [Model][doInitialScan] Initial repository scan started
+2026-05-04 12:08:31.079 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-05-04 12:08:36.989 [info] [main] Log level: Info
+2026-05-04 12:08:36.989 [info] [main] Validating found git in: "git"
+2026-05-04 12:08:36.989 [info] [main] Using git "2.25.1" from "git"
+2026-05-04 12:08:36.989 [info] [Model][doInitialScan] Initial repository scan started
+2026-05-04 12:08:36.989 [info] > git rev-parse --show-toplevel [4ms]
+2026-05-04 12:08:36.991 [info] > git rev-parse --git-dir --git-common-dir [0ms]
+2026-05-04 12:08:36.998 [info] [Model][openRepository] Opened repository (path): /home/student/mini-framework
+2026-05-04 12:08:36.998 [info] [Model][openRepository] Opened repository (real path): /home/student/mini-framework
+2026-05-04 12:08:37.003 [info] > git rev-parse --show-toplevel [1ms]
+2026-05-04 12:08:37.006 [info] > git config --get commit.template [5ms]
+2026-05-04 12:08:37.009 [info] > git rev-parse --show-toplevel [3ms]
+2026-05-04 12:08:37.013 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-05-04 12:08:37.025 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [17ms]
+2026-05-04 12:08:37.034 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/student/mini-framework/.git/refs/remotes/origin/main'
+2026-05-04 12:08:37.035 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2026-05-04 12:08:37.040 [info] > git status -z -uall [2ms]
+2026-05-04 12:08:37.041 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2026-05-04 12:08:37.056 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2026-05-04 12:08:37.059 [info] > git config --get --local branch.main.vscode-merge-base [1ms]
+2026-05-04 12:08:37.059 [warning] [Git][config] git config failed: Failed to execute git
+2026-05-04 12:08:37.061 [info] > git config --get commit.template [6ms]
+2026-05-04 12:08:37.063 [info] > git reflog main --grep-reflog=branch: Created from *. [2ms]
+2026-05-04 12:08:37.065 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2026-05-04 12:08:37.067 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/student/mini-framework/.git/refs/remotes/origin/main'
+2026-05-04 12:08:37.067 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2026-05-04 12:08:37.069 [info] > git rev-parse refs/remotes/origin/main [2ms]
+2026-05-04 12:08:37.073 [info] > git status -z -uall [2ms]
+2026-05-04 12:08:37.073 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [4ms]
+2026-05-04 12:08:37.075 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
+2026-05-04 12:08:37.079 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2026-05-04 12:08:37.081 [info] > git config --add --local branch.main.vscode-merge-base origin/main [6ms]
+2026-05-04 12:08:37.084 [info] > git config --get --local branch.main.vscode-merge-base [3ms]
+2026-05-04 12:08:37.086 [info] > git config --get commit.template [3ms]
+2026-05-04 12:08:37.086 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [1ms]
+2026-05-04 12:08:37.091 [info] > git merge-base refs/heads/main refs/remotes/origin/main [3ms]
+2026-05-04 12:08:37.094 [info] > git diff --name-status -z --diff-filter=ADMR 0ff45ef2b31c4009201d32d25812e6efdfa37542...refs/remotes/origin/main [1ms]
+2026-05-04 12:08:37.094 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2026-05-04 12:08:37.096 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/student/mini-framework/.git/refs/remotes/origin/main'
+2026-05-04 12:08:37.097 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2026-05-04 12:08:37.100 [info] > git status -z -uall [2ms]
+2026-05-04 12:08:37.101 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2026-05-04 12:08:37.523 [info] > git check-ignore -v -z --stdin [3ms]
+2026-05-04 12:08:38.165 [info] > git config --get commit.template [2ms]
+2026-05-04 12:08:38.165 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [0ms]
+2026-05-04 12:08:38.167 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/student/mini-framework/.git/refs/remotes/origin/main'
+2026-05-04 12:08:38.168 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2026-05-04 12:08:38.172 [info] > git status -z -uall [2ms]
+2026-05-04 12:08:38.172 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [0ms]
+2026-05-04 12:14:45.814 [info] > git show --textconv :README.md [4ms]
+2026-05-04 12:14:45.814 [info] > git ls-files --stage -- README.md [1ms]
+2026-05-04 12:14:45.823 [info] > git cat-file -s 399866403657efa07f02b6d5023edd376c7bdbbc [7ms]
+2026-05-04 12:14:46.669 [info] > git blame --root --incremental 0ff45ef2b31c4009201d32d25812e6efdfa37542 -- README.md [1ms]
+2026-05-04 12:16:33.549 [info] > git show --textconv :index.html [3ms]
+2026-05-04 12:16:33.549 [info] > git ls-files --stage -- index.html [1ms]
+2026-05-04 12:16:33.551 [info] > git cat-file -s 1e54a97861b0c63b4f2f6aae3bec7be70995b40e [0ms]
+2026-05-04 12:16:35.003 [info] > git check-ignore -v -z --stdin [2ms]
