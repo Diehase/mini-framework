@@ -1,20 +1,16 @@
-// src/main.js
 import { h, renderApp } from '../framework/dom.js';
 import { Store } from '../framework/state.js';
 import { Router } from '../framework/router.js';
 
-// 1. Инициализация состояния
 const store = new Store({
   todos: [],
-  filter: '/', // '/', '/active', '/completed'
+  filter: '/',
   editingId: null
 });
 
-// 2. Инициализация роутера
 const router = new Router(store);
 router.init();
 
-// 3. Действия (Actions)
 const actions = {
   addTodo: (e) => {
     if (e.key === 'Enter' && e.target.value.trim() !== '') {
@@ -57,7 +53,6 @@ const actions = {
   }
 };
 
-// 4. Компонент приложения
 function App(state) {
   const { todos, filter, editingId } = state;
 
@@ -71,7 +66,6 @@ function App(state) {
   const completedCount = todos.length - activeCount;
 
   return h('section', { className: 'todoapp' }, [
-    // Header
     h('header', { className: 'header' }, [
       h('h1', {}, 'todos'),
       h('input', { 
@@ -82,7 +76,6 @@ function App(state) {
       })
     ]),
     
-    // Main Section (показываем только если есть задачи)
     todos.length > 0 ? h('section', { className: 'main' }, [
       h('input', { 
         id: 'toggle-all', 
@@ -114,23 +107,21 @@ function App(state) {
       }))
     ]) : false,
 
-    // Footer
     todos.length > 0 ? h('footer', { className: 'footer' }, [
       h('span', { className: 'todo-count' }, [
         h('strong', {}, String(activeCount)),
         ` item${activeCount === 1 ? '' : 's'} left`
       ]),
       h('ul', { className: 'filters' }, [
-        h('li', {}, h('a', { href: '#/', className: filter === '/' ? 'selected' : '' }, 'All')),
-        h('li', {}, h('a', { href: '#/active', className: filter === '/active' ? 'selected' : '' }, 'Active')),
-        h('li', {}, h('a', { href: '#/completed', className: filter === '/completed' ? 'selected' : '' }, 'Completed'))
+        h('li', {}, h('a', { href: '#/', className: filter === '/' ? 'cyber-btn selected' : 'cyber-btn' }, 'All')),
+        h('li', {}, h('a', { href: '#/active', className: filter === '/active' ? 'cyber-btn selected' : 'cyber-btn' }, 'Active')),
+        h('li', {}, h('a', { href: '#/completed', className: filter === '/completed' ? 'cyber-btn selected' : 'cyber-btn' }, 'Completed'))
       ]),
-      completedCount > 0 ? h('button', { className: 'clear-completed', onClick: actions.clearCompleted }, 'Clear completed') : false
+      completedCount > 0 ? h('button', { className: 'clear-completed cyber-btn-accent', onClick: actions.clearCompleted }, 'Clear completed') : false
     ]) : false
   ]);
 }
 
-// 5. Запуск
 const rootElement = document.getElementById('app');
 const updateScreen = (state) => {
   renderApp(App(state), rootElement);
