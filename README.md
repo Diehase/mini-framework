@@ -21,7 +21,8 @@ The developer describes how the UI should look based on the current State. When 
 This ensures that the DOM is always a pure reflection of the underlying JavaScript data object, making the application predictable, easier to debug, and highly scalable.
 
 Getting Started
-bashnpx serve
+bash 
+npx serve
 
 
 <a name="russian"></a>
@@ -42,4 +43,5 @@ Mini-Framework & TodoMVC (RU)
 Это гарантирует, что DOM всегда является чистым отражением базового объекта данных JavaScript, что делает приложение предсказуемым, простым в отладке и легко масштабируемым.
 
 Запуск проекта
-bashnpx serve
+bash 
+npx serve
