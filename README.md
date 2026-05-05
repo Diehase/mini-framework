@@ -1,28 +1,32 @@
-English:
+# Mini-Framework & TodoMVC
+
 A custom lightweight frontend framework built from scratch (without React, Vue, or Angular) and a fully functional TodoMVC application demonstrating its capabilities. The project features a Cyberpunk-themed UI.
-Features
+
+## Features
 
 The framework implements four core pillars of modern frontend architecture:
 
-    DOM Abstraction: A declarative way to build UI using JavaScript objects instead of writing raw HTML strings or manually mutating the DOM.
+* **DOM Abstraction:** A declarative way to build UI using JavaScript objects instead of writing raw HTML strings or manually mutating the DOM.
+* **Event Handling:** A custom Event API integrated directly into the element creation process, eliminating the need for developers to manually call `addEventListener()`.
+* **State Management:** A centralized, globally reachable store that acts as the single source of truth for the application's data.
+* **Routing System:** A hash-based router that synchronizes the application's URL with the global state, allowing seamless navigation.
 
-    Event Handling: A custom Event API integrated directly into the element creation process, eliminating the need for developers to manually call addEventListener().
+## Why things work the way they work
 
-    State Management: A centralized, globally reachable store that acts as the single source of truth for the application's data.
-
-    Routing System: A hash-based router that synchronizes the application's URL with the global state, allowing seamless navigation.
-
-    Why things work the way they work
-
-The framework is built on the paradigm of State-Driven UI.
+The framework is built on the paradigm of **State-Driven UI**.
 
 Manually selecting DOM elements and changing their properties (Imperative UI) leads to spaghetti code that is hard to maintain, as the state of the application becomes scattered across the DOM.
 
-To solve this, the framework uses DOM Abstraction (a conceptual Virtual DOM approach). The developer describes how the UI should look based on the current State. When the user interacts with the app (via the custom Event Handling), they trigger an action that updates the Store. Once the Store receives new data (setState), it automatically notifies the subscriber (the main rendering function), which generates a new virtual representation of the UI and mounts it to the DOM.
+To solve this, the framework uses **DOM Abstraction** (a conceptual Virtual DOM approach). The developer describes how the UI should look based on the current State. When the user interacts with the app (via the custom Event Handling), they trigger an action that updates the Store. Once the Store receives new data (`setState`), it automatically notifies the subscriber (the main rendering function), which generates a new virtual representation of the UI and mounts it to the DOM.
 
 This ensures that the DOM is always a pure reflection of the underlying JavaScript data object, making the application predictable, easier to debug, and highly scalable.
 
-npx serve for starting
+## Getting Started
+
+To start the project, use the following command:
+
+```bash
+npx serve
 
 Русский:
 Пользовательский легковесный фронтенд-фреймворк, созданный с нуля (без использования React, Vue или Angular), и полностью функциональное приложение TodoMVC, демонстрирующее его возможности. Проект имеет пользовательский интерфейс в стиле киберпанк.
