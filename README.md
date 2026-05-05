@@ -24,9 +24,9 @@ This ensures that the DOM is always a pure reflection of the underlying JavaScri
 ## Getting Started
 
 To start the project, use the following command:
-
-```bash
 npx serve
+
+
 
 Русский:
 Пользовательский легковесный фронтенд-фреймворк, созданный с нуля (без использования React, Vue или Angular), и полностью функциональное приложение TodoMVC, демонстрирующее его возможности. Проект имеет пользовательский интерфейс в стиле киберпанк.
